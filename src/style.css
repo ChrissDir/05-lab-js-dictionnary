@@ -43,35 +43,50 @@ body{
   background-image: url(./assets/images/Background-desktop-light-mode.webp);
   background-size: cover;
   background-repeat: no-repeat;
+  flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
-
 h1{
   display: inline-block;
   font-family: 'Inter-700';
   font-size: 4rem;
+  letter-spacing: .8rem;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
 }
-
+h2{
+  font-family: 'Inter-700';
+  font-size: 1.5rem;
+  margin-bottom: 1.0625rem;
+}
 #ligne-haute{
+  display: flex;
   width: 100%;
-  height: auto;
+  max-height: 3.375rem;
   padding-left: 6.5rem;
   padding-right: 3.5625rem;
+  margin-top: 4%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 button{
   border: none;
   background-color: transparent;
   cursor: pointer;
+  font-family: 'Inter-400';
 }
 
 #options{
-  font-size: 32px;
-  border-radius: 45px;
+  display: flex;
+  align-items: center;
+  max-height: 3.375rem;
+  font-size: 2rem;
+  border-radius: 2.8125rem;
   background: rgba(234, 234, 234, 0.95);
+  padding: .3125rem .75rem .3125rem 1.875rem;
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
-  text-align: center;
+  gap: 70px;
 }
 
 .switch {
@@ -180,6 +195,50 @@ button{
 
 .input:checked + .slider:before {
   transform: translateX(30px);
+}
+input{
+  width: 100%;
+  padding: 1.2188rem 2.9375rem;
+  border-radius: 45px;
+  border: none;
+  font-size: 1.5rem;
+  outline-color: #73C0FC;
+}
+#component{
+  width: 60%;
+  margin: auto;
+  margin-top: 9%;
+  border-radius: 45px;
+  background: rgba(234, 234, 234, 0.95);
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 2.5625rem 3.875rem 3.4375rem 3.25rem;
+}
+#suggestion, input{
+  font-size: 1.5rem;
+  color: #626262;
+}
+#suggestion{
+  margin-top: .875rem;
+  margin-bottom: 4.4375rem;
+  padding-left: 2.9375rem;
+}
+.texte{
+  font-size: 1rem;
+  line-height: 4.375rem;
+}
+#alignementdescriptionimage{
+  display: flex;
+  gap: 10%;
+}
+#compbasgauche{
+  max-width: 50%;
+}
+#imageguguss{
+  position: relative;
+  padding-top: 12%;
+}
+#serif, #sans-serif, #inter{
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 375px) {
