@@ -42,18 +42,20 @@
 
 body {
   font-family: 'Inter-400';
+  height: auto;
+  background-image: url(./assets/images/Background-desktop-light-mode.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #container {
   display: flex;
-  background-image: url(./assets/images/Background-desktop-light-mode.webp);
-  background-repeat: no-repeat;
   flex-direction: column;
-  max-width: 1920px;
+  height: auto;
 }
 
 h1 {
-  display: inline-block;
   font-family: 'Inter-700';
   font-size: 4rem;
   letter-spacing: .8rem;
@@ -63,8 +65,7 @@ h1 {
 
 h2 {
   font-family: 'Inter-700';
-  font-size: 1.5rem;
-  margin-bottom: 1.0625rem;
+  padding-bottom: 1.0625rem;
 }
 
 button {
@@ -231,8 +232,8 @@ input {
 }
 
 #suggestion {
-  margin-top: .875rem;
-  margin-bottom: 4.4375rem;
+  padding-top: .875rem;
+  padding-bottom: 4.4375rem;
   padding-left: 2.9375rem;
 }
 
@@ -242,13 +243,18 @@ li {
 
 .texte {
   font-size: 1rem;
-  line-height: 4.375rem;
+  line-height: 50px;
 }
 
 #alignementdescriptionimage {
   display: flex;
   justify-content: space-between;
   gap: 10%;
+}
+
+audio{
+  width: 400px;
+  height: 54px;
 }
 
 #compglobale {
@@ -266,8 +272,8 @@ li {
   right: 5%;
 }
 
-#zone {
-  max-width: 60%;
+#zone, #synonymous, #synonymous-title{
+  max-width: 600px;
 }
 
 #ligne-haute {
@@ -275,6 +281,18 @@ li {
   align-items: center;
   flex-direction: row-reverse;
   margin-top: 4.4375rem;
+}
+
+#prononciation{
+  color: rgb(5, 5, 183);
+  font-family: 'Inter-400';
+  font-size: 1.125rem;
+  font-style: italic;
+}
+
+#synonymous-title{
+  padding-top: 5px;
+  padding-bottom: 0;
 }
 
 #serif,
@@ -297,6 +315,11 @@ li {
     font-family: "Inter-600";
     font-size: 12px;
   }
+
+  #prononciation{
+    font-size: .625rem;
+  }
+
 
   #ligne-haute {
     margin-top: 0;
@@ -330,19 +353,9 @@ li {
 
   #suggestion {
     padding-left: .875rem;
-    margin-top: .4375rem;
-    margin-bottom: 33px;
+    padding-top: .4375rem;
+    padding-bottom: 33px;
     font-size: .75rem;
-  }
-
-  #container {
-    height: 100vh;
-  }
-
-  #imageguguss{
-    content: url(./assets/images/guguss-mobile.webp);
-    right: 2%;
-    bottom: 2%;
   }
 
   #component {
@@ -354,12 +367,17 @@ li {
     margin-bottom: 79px;
   }
 
+  #imageguguss{
+    bottom: 1%;
+    right: 1%;
+  }
+
   #zone {
     max-width: 100%;
   }
 
   #synonymous-title {
-    margin-top: 1.8125rem;
+    padding-top: 1.8125rem;
   }
 
   #synonymous {
@@ -368,9 +386,19 @@ li {
   }
 }
 
+@media screen and (max-width: 1156px) {
+  #imageguguss{
+    content: url(./assets/images/guguss-mobile.webp);
+    right: 2%;
+    bottom: 2%;
+  }
+  #component{
+    max-width: 425px;
+  }
+}
 @media screen and (max-width: 375px) {
-  #container {
-    background-image: url(./assets/images/Background-desktop-light-mode.webp);
-    background-size: cover;
+  body {
+    background-image: url(./assets/images/Background-mobile-light-mode.webp);
+    background-position: initial;
   }
 }

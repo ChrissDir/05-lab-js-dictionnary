@@ -41,15 +41,21 @@
             <h2>What word do you want to look up ?</h2>
             <label for="finder"></label>
             <form class="rechercher" action="#" method="get">
-                <input type="search" placeholder="sunset" data-error-message="You must put a word to search for."
+                <input name="recherche" type="search" placeholder="sunset" data-error-message="You must put a word to search for."
                     id="finder" required>
-                <button type="sumbit"></button>
+                <button name="loupe" type="sumbit"></button>
             </form>
             <p id="suggestion">Suggested words: sunset, snow...</p>
 
 
-            <h2>sunset</h2>
-            <audio></audio>
+            <h2>sunset <span id="prononciation">[/sʌn.set/]</span></h2>
+            <audio
+            controls
+            src="/media/cc0-audio/t-rex-roar.mp3">
+                <a href="/media/cc0-audio/t-rex-roar.mp3">
+                    Download audio
+                </a>
+            </audio>
             <div id="zone">
                 <ul class="texte">
                     <li>The time of the day when the sun disappear bellow the western horizon.</li>
