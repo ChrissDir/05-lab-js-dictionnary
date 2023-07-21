@@ -84,6 +84,7 @@ button:hover {
   justify-content: space-between;
   margin-left: auto;
   margin-right: 57px;
+  max-height: 54px;
   gap: 70px;
   font-size: 2rem;
   border-radius: 2.8125rem;
@@ -212,7 +213,8 @@ input {
 }
 
 #component {
-
+  position: relative;
+  width: 1240px;
   margin: auto;
   margin-top: 7.0625rem;
   margin-bottom: 8.1875rem;
@@ -234,14 +236,13 @@ input {
   padding-left: 2.9375rem;
 }
 
-li{
+li {
   list-style: none;
 }
 
 .texte {
   font-size: 1rem;
   line-height: 4.375rem;
-
 }
 
 #alignementdescriptionimage {
@@ -250,8 +251,30 @@ li{
   gap: 10%;
 }
 
-#imageguguss {
+#compglobale {
+  display: flex;
+}
 
+#compgauche {
+  display: flex;
+  flex-direction: column;
+}
+
+#imageguguss {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+#zone {
+  max-width: 60%;
+}
+
+#ligne-haute {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-top: 4.4375rem;
 }
 
 #serif,
@@ -260,8 +283,8 @@ li{
   font-size: 2rem;
 }
 
-@media screen and (max-width: 671px) {
-  h1{
+@media screen and (max-width: 1426px) {
+  h1 {
     font-family: "Inter-600";
     margin: auto;
     margin-top: 3.375rem;
@@ -270,55 +293,59 @@ li{
     padding-left: 0px;
   }
 
-  h2{
+  h2 {
     font-family: "Inter-600";
     font-size: 12px;
+  }
+
+  #ligne-haute {
+    margin-top: 0;
+    flex-direction: column;
   }
 
   #serif,
   #sans-serif,
   #inter {
-  font-size: 12px;
+    font-size: 16px;
   }
 
-  #options{
+  #options {
     width: 100%;
     padding: 11px 35px;
-    max-height: 37px;
     margin: 0;
     gap: 0;
     border-radius: 0rem;
     box-shadow: none;
   }
 
-  input{
+  input {
     padding: 10px 14px;
     font-size: .75rem;
   }
-  
-  li{
+
+  li {
     font-size: .75rem;
     line-height: 1.875rem;
   }
 
-  #suggestion{
+  #suggestion {
     padding-left: .875rem;
     margin-top: .4375rem;
     margin-bottom: 33px;
     font-size: .75rem;
   }
 
-  #container{
-    background-image: url(./assets/images/Background-mobile-light-mode.webp);
-    background-size: cover;
+  #container {
+    height: 100vh;
   }
-  #imageguguss {
-    position: absolute;
-    right: 18%;
-    bottom: 22%;
+
+  #imageguguss{
     content: url(./assets/images/guguss-mobile.webp);
+    right: 2%;
+    bottom: 2%;
   }
-  #component{
+
+  #component {
     width: 76%;
     border-radius: 0;
     padding: 28px 16px 18px 16px;
@@ -326,11 +353,24 @@ li{
     margin-top: 3.375rem;
     margin-bottom: 79px;
   }
-  #synonymous-title{
+
+  #zone {
+    max-width: 100%;
+  }
+
+  #synonymous-title {
     margin-top: 1.8125rem;
   }
-  #synonymous{
+
+  #synonymous {
     font-size: .625rem;
     line-height: normal;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #container {
+    background-image: url(./assets/images/Background-desktop-light-mode.webp);
+    background-size: cover;
   }
 }
