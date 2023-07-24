@@ -31,6 +31,8 @@
   --color-light-theme-background: rgba(234, 234, 234, 0.95);
   --color-lightgray: #626262;
   --color-lightblue: #73C0FC;
+  --color-prononciation: #00248b;
+  --background-color-dark-theme: rgba(100, 100, 100, 0.90);
   font-size: 100%;
 }
 
@@ -42,17 +44,16 @@
 
 body {
   font-family: 'Inter-400';
-  height: auto;
   background-image: url(./assets/images/Background-desktop-light-mode.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  min-height: 100vh;
 }
 
 #container {
   display: flex;
   flex-direction: column;
-  height: auto;
 }
 
 h1 {
@@ -252,9 +253,8 @@ li {
   gap: 10%;
 }
 
-audio{
-  width: 400px;
-  height: 54px;
+audio {
+  width: 600px;
 }
 
 #compglobale {
@@ -272,7 +272,9 @@ audio{
   right: 5%;
 }
 
-#zone, #synonymous, #synonymous-title{
+#zone,
+#synonymous,
+#synonymous-title {
   max-width: 600px;
 }
 
@@ -283,14 +285,14 @@ audio{
   margin-top: 4.4375rem;
 }
 
-#prononciation{
-  color: rgb(5, 5, 183);
+#prononciation {
+  color: var(--color-prononciation);
   font-family: 'Inter-400';
   font-size: 1.125rem;
   font-style: italic;
 }
 
-#synonymous-title{
+#synonymous-title {
   padding-top: 5px;
   padding-bottom: 0;
 }
@@ -301,7 +303,26 @@ audio{
   font-size: 2rem;
 }
 
+#loupe-recherche {
+  position: absolute;
+  background-image: url(./assets/images/loupe.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  top: 14.5%;
+  right: 8%;
+}
+
 @media screen and (max-width: 1426px) {
+  #loupe-recherche {
+    background-image: url(./assets/images/loupe-mobile.webp);
+    width: 16px;
+    height: 16px;
+    top: 15%;
+    right: 5%;
+  }
+
   h1 {
     font-family: "Inter-600";
     margin: auto;
@@ -316,7 +337,7 @@ audio{
     font-size: 12px;
   }
 
-  #prononciation{
+  #prononciation {
     font-size: .625rem;
   }
 
@@ -330,6 +351,10 @@ audio{
   #sans-serif,
   #inter {
     font-size: 16px;
+  }
+
+  audio {
+    width: 50%;
   }
 
   #options {
@@ -347,6 +372,7 @@ audio{
   }
 
   li {
+    max-width: 50%;
     font-size: .75rem;
     line-height: 1.875rem;
   }
@@ -367,7 +393,7 @@ audio{
     margin-bottom: 79px;
   }
 
-  #imageguguss{
+  #imageguguss {
     bottom: 1%;
     right: 1%;
   }
@@ -377,7 +403,12 @@ audio{
   }
 
   #synonymous-title {
+    max-width: 50%;
     padding-top: 1.8125rem;
+  }
+
+  #synonymous.texte {
+    max-width: 50%;
   }
 
   #synonymous {
@@ -387,18 +418,123 @@ audio{
 }
 
 @media screen and (max-width: 1156px) {
-  #imageguguss{
+  #loupe-recherche {
+    top: 14%;
+    right: 8%;
+  }
+
+  #imageguguss {
     content: url(./assets/images/guguss-mobile.webp);
     right: 2%;
     bottom: 2%;
   }
-  #component{
+
+  #component {
     max-width: 425px;
   }
+
+  audio {
+    width: 100%;
+  }
+
+  li {
+    max-width: 100%;
+  }
 }
+
 @media screen and (max-width: 375px) {
+  #loupe-recherche {
+    top: 13%;
+    right: 10%;
+  }
+
   body {
     background-image: url(./assets/images/Background-mobile-light-mode.webp);
-    background-position: initial;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: url(./assets/images/Background-desktop-dark-mode.webp);
+    color: var(--color-white);
+  }
+
+  #component,
+  #options {
+    background: var(--background-color-dark-theme);
+  }
+
+  #prononciation {
+    color: var(--color-lightblue);
+  }
+
+  input {
+    color: var(--color-lightgray);
+  }
+
+  input[type=search]:focus {
+    background-color: var(--color-lightblue);
+    outline-color: var(--color-white);
+    color: black;
+  }
+
+  #suggestion {
+    color: var(--color-white);
+  }
+
+  #serif,
+  #sans-serif,
+  #inter {
+    color: var(--color-white);
+  }
+
+  #serif:hover,
+  #sans-serif:hover,
+  #inter:hover {
+    color: var(--color-lightblue);
+  }
+}
+
+body.dark-theme {
+  background-image: url(./assets/images/Background-desktop-dark-mode.webp);
+  color: var(--color-white);
+}
+
+#component.dark-theme,
+#options.dark-theme {
+  background: var(--background-color-dark-theme);
+}
+
+#prononciation.dark-theme {
+  color: var(--color-lightblue);
+}
+
+input.dark-theme {
+  color: var(--color-lightgray);
+}
+
+#finder:focus.dark-theme {
+  background-color: var(--color-lightblue);
+  outline-color: var(--color-white);
+  color: black;
+}
+
+#suggestion.dark-theme {
+  color: var(--color-white);
+}
+
+#imageguguss.dark-theme {
+  filter: invert(100%);
+}
+
+#serif.dark-theme,
+#sans-serif.dark-theme,
+#inter.dark-theme {
+  color: var(--color-white);
+}
+
+#serif:hover.dark-theme,
+#sans-serif:hover.dark-theme,
+#inter:hover.dark-theme {
+  color: var(--color-lightblue);
 }
