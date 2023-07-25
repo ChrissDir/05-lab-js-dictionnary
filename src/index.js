@@ -22,18 +22,23 @@ elements[0].addEventListener('click', (e) => {
   toggleDarkTheme(e.target.checked);
 });
 
-const serif = document.querySelector('#serif');
-const sansserif = document.querySelector('#sans-serif');
-const inter =  document.querySelector('#inter');
+const fontschange = [
+  document.body,
+  document.querySelector('#serif'),
+  document.querySelector('#sans-serif'),
+  document.querySelector('#inter'),
+  document.querySelector('h1'),
+  document.querySelector('#finder'),
+  document.querySelector('#prononciation'),
+  ...document.querySelectorAll('h2')
+];
 
-serif.addEventListener('click', (e) => {
-  document.body.style.fontFamily = 'serif';
-});
+function changeFontFamily(font) {
+  fontschange.forEach(element => {
+    element.style.fontFamily = font;
+  });
+}
 
-sansserif.addEventListener('click', (e) => {
-  document.body.style.fontFamily = 'sans-serif';
-});
-
-inter.addEventListener('click', (e) => {
-  document.body.style.fontFamily = 'monospace';
-});
+document.querySelector('#serif').addEventListener('click', () => changeFontFamily('serif'));
+document.querySelector('#sans-serif').addEventListener('click', () => changeFontFamily('sans-serif'));
+document.querySelector('#inter').addEventListener('click', () => changeFontFamily('monospace'));

@@ -215,7 +215,7 @@ input {
   border-radius: 45px;
   border: none;
   font-size: 1.5rem;
-  outline: var(--color-lightblue) double 2px;
+  outline-color: var(--color-lightblue);
 }
 
 #component {
@@ -299,7 +299,6 @@ audio {
 
 #synonymous-title {
   padding-top: 5px;
-  padding-bottom: 0;
 }
 
 #serif,
@@ -339,7 +338,7 @@ audio {
 
   h2 {
     font-family: "Inter-600";
-    font-size: 12px;
+    font-size: 16px;
   }
 
   #prononciation {
@@ -364,7 +363,7 @@ audio {
 
   #options {
     width: 100%;
-    padding: 11px 35px;
+    padding: 11px 5%;
     margin: 0;
     gap: 0;
     border-radius: 0rem;
@@ -417,7 +416,7 @@ audio {
   }
 
   #synonymous {
-    font-size: .625rem;
+    font-size: .75rem;
     line-height: normal;
   }
 }
@@ -445,9 +444,12 @@ audio {
 }
 
 @media screen and (max-width: 375px) {
-
   body {
     background-image: url(./assets/images/Background-mobile-light-mode.webp);
+  }
+  #options{
+    padding-left: 17.5px;
+    padding-right: 17.5px;
   }
 }
 
