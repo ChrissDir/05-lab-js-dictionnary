@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Inter-400';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: 'Inter-600';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -17,7 +17,7 @@
 }
 
 @font-face {
-  font-family: 'Inter-700';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -43,16 +43,13 @@
 }
 
 body {
-  font-family: 'Inter-400';
+  font-family: 'Inter';
+  font-weight: 400;
   background-image: url(./assets/images/Background-desktop-light-mode.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   min-height: 100vh;
-}
-
-.rechercher{
-  position: relative;
 }
 
 #container {
@@ -61,7 +58,8 @@ body {
 }
 
 h1 {
-  font-family: 'Inter-700';
+  font-family: 'Inter';
+  font-weight: 700;
   font-size: 4rem;
   letter-spacing: .8rem;
   padding-left: 6.8125rem;
@@ -69,7 +67,8 @@ h1 {
 }
 
 h2 {
-  font-family: 'Inter-700';
+  font-family: 'Inter';
+  font-weight: 700;
   padding-bottom: 1.0625rem;
 }
 
@@ -78,6 +77,7 @@ button {
   background-color: transparent;
   cursor: pointer;
   font-family: 'Inter-400';
+  font-weight: 400;
 }
 
 button:hover {
@@ -213,9 +213,12 @@ input {
   width: 100%;
   padding: 1.2188rem 2.9375rem;
   border-radius: 45px;
-  border: none;
+  border: transparent;
   font-size: 1.5rem;
-  outline-color: var(--color-lightblue);
+}
+
+input:focus{
+  outline: 3px solid var(--color-lightblue)
 }
 
 #component {
@@ -292,7 +295,8 @@ audio {
 
 #prononciation {
   color: var(--color-prononciation);
-  font-family: 'Inter-400';
+  font-family: 'Inter';
+  font-weight: 400;
   font-size: 1.125rem;
   font-style: italic;
 }
@@ -307,6 +311,10 @@ audio {
   font-size: 2rem;
 }
 
+#searchbar{
+  position: relative;
+}
+
 #loupe-recherche {
   position: absolute;
   background-image: url(./assets/images/loupe.webp);
@@ -318,6 +326,12 @@ audio {
   right: 4%;
 }
 
+#resultat{
+  padding-left: 2.9375rem;
+  font-size: 1.5rem;
+  color: var(--color-lightgray);
+}
+
 @media screen and (max-width: 1426px) {
   #loupe-recherche {
     background-image: url(./assets/images/loupe-mobile.webp);
@@ -327,8 +341,14 @@ audio {
     right: 3%;
   }
 
+  #resultat{
+    padding-left: .875rem;
+    font-size: .75rem;
+  }
+
   h1 {
-    font-family: "Inter-600";
+    font-family: "Inter";
+    font-weight: 600;
     margin: auto;
     margin-top: 3.375rem;
     font-size: 1.5rem;
@@ -337,7 +357,8 @@ audio {
   }
 
   h2 {
-    font-family: "Inter-600";
+    font-family: "Inter";
+    font-weight: 600;
     font-size: 16px;
   }
 
@@ -375,8 +396,11 @@ audio {
     font-size: .75rem;
   }
 
-  li {
+  ul{
     max-width: 50%;
+  }
+
+  li {
     font-size: .75rem;
     line-height: 1.875rem;
   }
@@ -438,8 +462,12 @@ audio {
     width: 80%;
   }
 
-  li {
+  ul {
     max-width: 100%;
+  }
+
+  input:focus{
+    outline: 2px solid var(--color-lightblue)
   }
 }
 
@@ -523,10 +551,6 @@ input.dark-theme {
   color: var(--color-white);
 }
 
-#imageguguss.dark-theme {
-  filter: invert(100%);
-}
-
 #serif.dark-theme,
 #sans-serif.dark-theme,
 #inter.dark-theme {
@@ -537,4 +561,8 @@ input.dark-theme {
 #sans-serif:hover.dark-theme,
 #inter:hover.dark-theme {
   color: var(--color-lightblue);
+}
+
+#resultat.dark-theme {
+  color: var(--color-white);
 }
