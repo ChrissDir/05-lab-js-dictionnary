@@ -211,6 +211,7 @@ button:hover {
 
 input {
   width: 100%;
+  color: black;
   padding: 1.2188rem 2.9375rem;
   border-radius: 45px;
   border: transparent;
@@ -233,8 +234,7 @@ input:focus{
   padding: 2.5625rem 3.875rem 3.4375rem 3.25rem;
 }
 
-#suggestion,
-input {
+#suggestion {
   font-size: 1.5rem;
   color: var(--color-lightgray);
 }
@@ -246,12 +246,14 @@ input {
 }
 
 li {
-  list-style: none;
+  list-style-type: none;
+  text-align: justify;
+  line-height: 30px;
+  padding: 10px 0;
 }
 
 .texte {
   font-size: 1rem;
-  line-height: 50px;
 }
 
 #alignementdescriptionimage {
@@ -326,11 +328,14 @@ audio {
   right: 4%;
 }
 
-#resultat{
+#resultat.texte{
+  padding-top: .875rem;
   padding-left: 2.9375rem;
   font-size: 1.5rem;
-  color: var(--color-lightgray);
+  font-weight: 600;
+  color: red;
 }
+
 
 @media screen and (max-width: 1426px) {
   #loupe-recherche {
@@ -342,6 +347,7 @@ audio {
   }
 
   #resultat{
+    padding-top: 0;
     padding-left: .875rem;
     font-size: .75rem;
   }
@@ -402,7 +408,6 @@ audio {
 
   li {
     font-size: .75rem;
-    line-height: 1.875rem;
   }
 
   #suggestion {
@@ -414,6 +419,7 @@ audio {
 
   #component {
     max-width: 850px;
+    min-height: 500px;
     border-radius: 0;
     padding: 28px 16px 18px 16px;
     margin: auto;
@@ -455,6 +461,7 @@ audio {
 
   #component {
     width: 90%;
+    min-height: auto;
     max-width: 425px;
   }
 

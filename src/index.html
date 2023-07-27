@@ -39,16 +39,16 @@
         </div>
         <div id="component">
             <h2>What word do you want to look up ?</h2>
-            <div id="searchbar">
-                <input name="recherche" autocapitalize="none" autocomplete="off" autofocus type="text" placeholder="sunset" spellcheck="false" id="finder" required>
+            <form id="searchbar" action="#" method="get">
+                <input name="recherche" autocapitalize="none" autocomplete="off" autofocus type="text" placeholder="sunset" spellcheck="false" id="finder">
                 <button name="loupe" id="loupe-recherche" type="submit"></button>
-            </div>
+            </form>
             <div class="texte" id="resultat"></div>
             <p id="suggestion">Suggested words: sunset, snow...</p>
 
 
             <h2><span id="nom_mot">sunset</span> <span id="prononciation">[/sʌn.set/]</span></h2>
-            <audio controls src="//ssl.gstatic.com/dictionary/static/sounds/20200429/sunset--_gb_1.mp3">
+            <audio id="audioprono" controls src="//ssl.gstatic.com/dictionary/static/sounds/20200429/sunset--_gb_1.mp3">
             </audio>
             <div id="zone">
                 <ul class="texte">
