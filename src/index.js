@@ -67,39 +67,49 @@ function search() {
     .catch(error => {
       resultat.textContent = "Aucune définition trouvée !";
     });
+
 }
 
 function displayWordData(data) {
+
   const word = document.querySelector('#finder').value.toLowerCase();
-  const textLists = Array.from(document.querySelectorAll('ul > li'));
+  const textLists = document.querySelector('ul');
   const nomdumot = document.querySelector('#nom_mot');
   const prononciation = document.querySelector('#prononciation');
   const audioelement = document.querySelector('#audioprono');
   const synonymous = document.querySelector('#synonymous');
-  const synonymousTitle = document.querySelector('h2 > #synonymous-title');
+  const synonymousTitle = document.querySelector('#synonymous-title');
 
   for (let words of data) {
     const { meanings, phonetics } = words;
-    const definitions = meanings.map(meaning => meaning.definitions[0].definition);
-    const syn = meanings[0].synonyms;
-    const prononcia = phonetics[0].text;
-    const audioprononciation = phonetics[0].audio;
+    const wordDefinitions = [];
+    meanings.forEach(meaning => {
+      meaning.definitions.forEach(definition => {
+        wordDefinitions.push(definition.definition);
+      });
+    });
+    console.log(wordDefinitions);
+    const syn = meanings[0]?.synonyms ?? [];
+    const prononcia = phonetics[0]?.text ?? '';
+    const audioprononciation = phonetics[0]?.audio ?? '';
 
-    textLists.forEach((textList, index) => {
-      textList.textContent = definitions[index] || '';
-      textList.style.display = definitions[index] ? 'block' : 'none';
+    textLists.innerHTML = "";
+    wordDefinitions.forEach((definition) => {
+      textLists.innerHTML += `<li>${definition}</li>`;
+
     });
 
     synonymous.textContent = syn.join(', ');
     nomdumot.textContent = word;
     prononciation.textContent = "[" + prononcia + "]";
+    prononciation.style.display = prononcia ? 'inline' : 'none';
     audioelement.src = audioprononciation;
     audioelement.style.display = audioprononciation ? 'block' : 'none';
     synonymousTitle.style.display = syn.length > 0 ? 'block' : 'none';
+    resultat.textContent = "";
   }
 }
 
 document.querySelector('#loupe-recherche').addEventListener('click', search);
-
 
 

@@ -31,7 +31,9 @@
   --color-light-theme-background: rgba(234, 234, 234, 0.95);
   --color-lightgray: #626262;
   --color-lightblue: #73C0FC;
+  --color-black: #000000;
   --color-prononciation: #00248b;
+  --color-error: #ff0000;
   --background-color-dark-theme: rgba(100, 100, 100, 0.90);
   font-size: 100%;
 }
@@ -211,20 +213,21 @@ button:hover {
 
 input {
   width: 100%;
-  color: black;
+  color: var(--color-black);
   padding: 1.2188rem 2.9375rem;
   border-radius: 45px;
   border: transparent;
   font-size: 1.5rem;
 }
 
-input:focus{
+input:focus {
   outline: 3px solid var(--color-lightblue)
 }
 
 #component {
   position: relative;
   width: 1240px;
+  min-height: 600px;
   margin: auto;
   margin-top: 7.0625rem;
   margin-bottom: 8.1875rem;
@@ -248,7 +251,7 @@ input:focus{
 li {
   list-style-type: none;
   text-align: justify;
-  line-height: 30px;
+  line-height: 20px;
   padding: 10px 0;
 }
 
@@ -313,7 +316,7 @@ audio {
   font-size: 2rem;
 }
 
-#searchbar{
+#searchbar {
   position: relative;
 }
 
@@ -328,12 +331,12 @@ audio {
   right: 4%;
 }
 
-#resultat.texte{
+#resultat.texte {
   padding-top: .875rem;
   padding-left: 2.9375rem;
   font-size: 1.5rem;
   font-weight: 600;
-  color: red;
+  color: var(--color-error);
 }
 
 
@@ -346,10 +349,10 @@ audio {
     right: 3%;
   }
 
-  #resultat{
-    padding-top: 0;
+  #resultat.texte {
     padding-left: .875rem;
     font-size: .75rem;
+    font-weight: 600;
   }
 
   h1 {
@@ -357,7 +360,7 @@ audio {
     font-weight: 600;
     margin: auto;
     margin-top: 3.375rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     letter-spacing: .9rem;
     padding-left: 0px;
   }
@@ -402,7 +405,7 @@ audio {
     font-size: .75rem;
   }
 
-  ul{
+  ul {
     max-width: 50%;
   }
 
@@ -454,9 +457,9 @@ audio {
 @media screen and (max-width: 900px) {
 
   #imageguguss {
+    position: absolute;
     content: url(./assets/images/guguss-mobile.webp);
     right: 2%;
-    bottom: 2%;
   }
 
   #component {
@@ -473,7 +476,7 @@ audio {
     max-width: 100%;
   }
 
-  input:focus{
+  input:focus {
     outline: 2px solid var(--color-lightblue)
   }
 }
@@ -482,7 +485,12 @@ audio {
   body {
     background-image: url(./assets/images/Background-mobile-light-mode.webp);
   }
-  #options{
+
+  h1{
+    font-size: 1.5rem;
+  }
+
+  #options {
     padding-left: 17.5px;
     padding-right: 17.5px;
   }
@@ -510,7 +518,7 @@ audio {
   input[type=search]:focus {
     background-color: var(--color-lightblue);
     outline-color: var(--color-white);
-    color: black;
+    color: var(--color-black);
   }
 
   #suggestion {
@@ -540,10 +548,6 @@ body.dark-theme {
   background: var(--background-color-dark-theme);
 }
 
-#prononciation.dark-theme {
-  color: var(--color-lightblue);
-}
-
 input.dark-theme {
   color: var(--color-lightgray);
 }
@@ -551,25 +555,20 @@ input.dark-theme {
 #finder:focus.dark-theme {
   background-color: var(--color-lightblue);
   outline-color: var(--color-white);
-  color: black;
-}
-
-#suggestion.dark-theme {
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 #serif.dark-theme,
 #sans-serif.dark-theme,
-#inter.dark-theme {
+#inter.dark-theme,
+#suggestion.dark-theme {
   color: var(--color-white);
 }
 
 #serif:hover.dark-theme,
 #sans-serif:hover.dark-theme,
-#inter:hover.dark-theme {
+#inter:hover.dark-theme,
+#resultat.dark-theme,
+#prononciation.dark-theme {
   color: var(--color-lightblue);
-}
-
-#resultat.dark-theme {
-  color: var(--color-white);
 }
