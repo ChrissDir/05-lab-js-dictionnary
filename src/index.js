@@ -1,4 +1,4 @@
-import "./style.css";
+import "./style.scss";
 
 const elements = [
   document.querySelector('.switch'),
@@ -91,12 +91,11 @@ function displayWordData(data) {
     console.log(wordDefinitions);
     const syn = meanings[0]?.synonyms ?? [];
     const prononcia = phonetics[0]?.text ?? '';
-    const audioprononciation = phonetics[0]?.audio ?? '';
+    const audioprononciation = phonetics[1]?.audio ?? '';
 
-    textLists.innerHTML = "";
+    textLists.textContent = "";
     wordDefinitions.forEach((definition) => {
       textLists.innerHTML += `<li>${definition}</li>`;
-
     });
 
     synonymous.textContent = syn.join(', ');
