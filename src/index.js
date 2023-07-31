@@ -91,7 +91,7 @@ function displayWordData(data) {
     console.log(wordDefinitions);
     const syn = meanings[0]?.synonyms ?? [];
     const prononcia = phonetics[0]?.text ?? '';
-    const audioprononciation = phonetics[1]?.audio ?? '';
+    const audioprononciation = phonetics[0]?.audio ?? '';
 
     textLists.textContent = "";
     wordDefinitions.forEach((definition) => {
