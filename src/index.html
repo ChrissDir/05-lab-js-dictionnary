@@ -41,35 +41,42 @@
         <div id="component">
             <h2>What word do you want to look up ?</h2>
             <form id="searchbar" action="#" method="get">
-                <input name="recherche" autocapitalize="none" autocomplete="off" autofocus type="text" placeholder="sunset" spellcheck="false" id="finder">
+                <input name="recherche" autocapitalize="none" autocomplete="off" autofocus type="text"
+                    placeholder="sunset" spellcheck="false" id="finder">
                 <button name="loupe" id="loupe-recherche" type="submit"></button>
             </form>
             <div class="texte" id="resultat"></div>
             <p id="suggestion">Suggested words: sunset, snow...</p>
 
-
-            <h2><span id="nom_mot">sunset</span> <span id="prononciation">[/sʌn.set/]</span></h2>
-            <audio id="audioprono" controls src="https://www.cjoint.com/doc/16_09/FIsxS52QXY7_Rick-Astley---Never-Gonna-Give-You-Up.mp3">
-            <!-- //ssl.gstatic.com/dictionary/static/sounds/20200429/sunset--_gb_1.mp3 -->
-            </audio>
-            <div id="zone">
-                <ul class="texte">
-                    <li>The time of the day when the sun disappear bellow the western horizon </li>
-                    <li>The changes in color of the sky at sunset.</li>
-                    <li>The final period of the life of a person or thing.</li>
-                    <li>Having a set termination date.</li>
-                    <li>The region where the sun sets; the west.</li>
-                </ul>
+            <div id="grandediv">
+                <div id="divdegauche">
+                    <h2><span id="nom_mot">sunset</span> <span id="prononciation">[/sʌn.set/]</span></h2>
+                    <audio id="audioprono" controls
+                        src="https://www.cjoint.com/doc/16_09/FIsxS52QXY7_Rick-Astley---Never-Gonna-Give-You-Up.mp3">
+                        <!-- //ssl.gstatic.com/dictionary/static/sounds/20200429/sunset--_gb_1.mp3 -->
+                    </audio>
+                    <div id="zone">
+                        <ul class="texte">
+                            <li>The time of the day when the sun disappear bellow the western horizon </li>
+                            <li>The changes in color of the sky at sunset.</li>
+                            <li>The final period of the life of a person or thing.</li>
+                            <li>Having a set termination date.</li>
+                            <li>The region where the sun sets; the west.</li>
+                        </ul>
+                    </div>
+                    <h2 id="synonymous-title">synonymous</h2>
+                    <p class="texte" id="synonymous">sundown</p>
+                </div>
+                <div id="divdedroite">
+                    <div id="imageguguss">
+                        <img src="./assets/images/guguss-desktop.webp"
+                            alt="Illustration d'un personnage avec des lunettes en noir et blanc regardant dans un livre">
+                    </div>
+                </div>
             </div>
-            <h2 id="synonymous-title">synonymous</h2>
-            <p class="texte" id="synonymous">sundown</p>
-
-            <div id="imageguguss">
-                <img src="./assets/images/guguss-desktop.webp"
-                    alt="Illustration d'un personnage avec des lunettes en noir et blanc regardant dans un livre">
-            </div>
-          </div>
         </div>
+    </div>
+
 </body>
 
 </html>

@@ -88,10 +88,11 @@ function displayWordData(data) {
         wordDefinitions.push(definition.definition);
       });
     });
-    console.log(wordDefinitions);
+    
     const syn = meanings[0]?.synonyms ?? [];
     const prononcia = phonetics[0]?.text ?? '';
-    const audioprononciation = phonetics[0]?.audio ?? '';
+    const audioprononciation = phonetics[0]?.audio ?? '' ;
+    console.log(phonetics);
 
     textLists.textContent = "";
     wordDefinitions.forEach((definition) => {
