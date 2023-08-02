@@ -259,15 +259,10 @@ li {
   font-size: 1rem;
 }
 
-#alignementdescriptionimage {
-  display: flex;
-  justify-content: space-between;
-  gap: 10%;
-}
-
 audio {
-  width: 100%;
+  width: 400px;
   height: 40px;
+  margin-bottom: 20px;
 }
 
 #grandediv {
@@ -278,26 +273,22 @@ audio {
 #divdegauche {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  max-width: 55%;
 }
 
-#divdedroite{
+#divdedroite {
   display: flex;
-  padding-left: 10%;
+  padding-left: 2%;
 }
 
 #imageguguss {
-position: sticky;
-width: 400px;
-height: 310px;
-top: 30%;
+  position: sticky;
+  width: 400px;
+  height: 310px;
+  top: 60%;
+  bottom: 0;
 }
 
-#zone,
-#synonymous,
-#synonymous-title {
-  max-width: 600px;
-}
 
 #ligne-haute {
   display: flex;
@@ -436,13 +427,8 @@ top: 30%;
     margin-bottom: 79px;
   }
 
-  #divdegauche{
+  #divdegauche {
     width: 100%;
-  }
-
-  #imageguguss {
-    bottom: 1%;
-    right: 1%;
   }
 
   #zone {
@@ -469,6 +455,7 @@ top: 30%;
     content: url(./assets/images/guguss-mobile.webp);
     width: 90px;
     height: 70px;
+    top: 90%;
   }
 
   #component {
@@ -481,6 +468,10 @@ top: 30%;
   li,
   #synonymous.texte {
     max-width: 100%;
+  }
+
+  #divdegauche {
+    max-width: 70%;
   }
 
   ul {
