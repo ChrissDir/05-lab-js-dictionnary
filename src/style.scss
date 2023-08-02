@@ -251,8 +251,8 @@ li {
   list-style-type: none;
   text-align: justify;
   line-height: 20px;
-  padding: .625rem 0;
-
+  padding: .9375rem 0;
+  border-bottom: var(--color-lightgray) solid 1px;
 }
 
 .texte {
@@ -402,9 +402,6 @@ audio {
     font-size: .75rem;
   }
 
-  ul {
-    max-width: 418px;
-  }
 
   li {
     font-size: .75rem;
@@ -455,7 +452,7 @@ audio {
     content: url(./assets/images/guguss-mobile.webp);
     width: 90px;
     height: 70px;
-    top: 90%;
+    top: 45%;
   }
 
   #component {
@@ -474,68 +471,11 @@ audio {
     max-width: 70%;
   }
 
-  ul {
-    max-width: 100%;
-  }
-
   input:focus {
     outline: 2px solid var(--color-lightblue);
   }
 }
 
-@media screen and (max-width: 375px) {
-  body {
-    background-image: url(./assets/images/Background-mobile-light-mode.webp);
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  #options {
-    padding-left: 17.5px;
-    padding-right: 17.5px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-image: url(./assets/images/Background-desktop-dark-mode.webp);
-    color: var(--color-white);
-  }
-
-  #component,
-  #options {
-    background: var(--background-color-dark-theme);
-  }
-
-  #prononciation {
-    color: var(--color-lightblue);
-  }
-
-  input {
-    color: var(--color-lightgray);
-
-    &[type=search]:focus {
-      background-color: var(--color-lightblue);
-      outline-color: var(--color-white);
-      color: var(--color-black);
-    }
-  }
-
-  #suggestion,
-  #serif,
-  #sans-serif,
-  #inter {
-    color: var(--color-white);
-  }
-
-  #serif:hover,
-  #sans-serif:hover,
-  #inter:hover {
-    color: var(--color-lightblue);
-  }
-}
 
 body.dark-theme {
   background-image: url(./assets/images/Background-desktop-dark-mode.webp);
