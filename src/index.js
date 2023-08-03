@@ -1,6 +1,7 @@
 import "./style.scss";
 
-  // Préparation des div à changer lors du click dans un array
+// Préparation des div à changer lors du click dans un array
+let ligne = document.querySelectorAll('li');
 const elements = [
   document.querySelector('.switch'),
   document.querySelector('#component'),
@@ -15,16 +16,25 @@ const elements = [
   document.body
 ];
 
-  //Quand le bouton switch est cliqué, la fonction toggleDarkTheme est appelée, et ça ajoute ou supprime la classe "dark-theme" des elements appelés
 const toggleDarkTheme = (isChecked) => {
   const classAction = isChecked ? 'add' : 'remove';
-  elements.forEach(element => element.classList[classAction]('dark-theme'));
+  elements.forEach(element => {
+    element.classList[classAction]('dark-theme')
+  });
+  ligne.forEach(li => {
+    li.classList[classAction]('dark-theme')
+  });
 };
-elements[0].addEventListener('click', (e) => {
-  toggleDarkTheme(e.target.checked);
+
+elements[0].addEventListener('click', function (e) {
+  if (e.target.tagName === 'INPUT') {
+    toggleDarkTheme(e.target.checked);
+  }
+
 });
 
-  // Préparation des div à changer lors du click dans un array
+
+// Préparation des div à changer lors du click dans un array
 const fontschange = [
   document.body,
   document.querySelector('#serif'),
@@ -37,25 +47,25 @@ const fontschange = [
   ...document.querySelectorAll('h2')
 ];
 
-  // Fonction appelée sur chaque bouton
+// Fonction appelée sur chaque bouton
 function changeFontFamily(font) {
   fontschange.forEach(element => {
     element.style.fontFamily = font;
   });
 }
 
-  // Assignation de chaque bouton en fonction de son nom et ce qu'il doit faire
+// Assignation de chaque bouton en fonction de son nom et ce qu'il doit faire
 document.querySelector('#serif').addEventListener('click', () => changeFontFamily('serif'));
 document.querySelector('#sans-serif').addEventListener('click', () => changeFontFamily('sans-serif'));
 document.querySelector('#inter').addEventListener('click', () => changeFontFamily('monospace'));
 
-  // Pour empêcher le formulaire d'agir par défaut lors du submit
+// Pour empêcher le formulaire d'agir par défaut lors du submit
 let form = document.querySelector('#searchbar');
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 });
 
-  // Fonction utilisée pour l'envoi de la requête
+// Fonction utilisée pour l'envoi de la requête
 function search() {
   const resultat = document.querySelector('#resultat');
 
@@ -75,6 +85,7 @@ function search() {
     .then(data => displayWordData(data))
     .catch(error => {
       resultat.textContent = "Aucune définition trouvée !";
+      console.log(error);
     });
 }
 
@@ -129,9 +140,15 @@ function displayWordData(data) {
 
     // Reset ce qu'il y a dans textLists et crée une ligne pour chaque définition trouvée dans wordDefinitions
     textLists.textContent = "";
-    wordDefinitions.forEach((definition) => {
-      textLists.innerHTML += `<li>${definition}</li>`;
-    });
+    if (!resultat.classList.contains('dark-theme')) {
+      wordDefinitions.forEach((definition) => {
+        textLists.innerHTML += `<li>${definition}</li>`;
+      })
+    } else {
+      wordDefinitions.forEach((definition) => {
+        textLists.innerHTML += `<li class="dark-theme">${definition}</li>`;
+      })
+    };
 
     // Enlève et affiche ce qu'il faut lorsqu'un contenu est vide
     synonymous.textContent = syn.join(', ');
@@ -142,8 +159,12 @@ function displayWordData(data) {
     audioelement.style.display = audioprononciation ? 'block' : 'none';
     synonymousTitle.style.display = syn.length > 0 ? 'block' : 'none';
     resultat.textContent = "";
+
   }
+
+  ligne = document.querySelectorAll('li');
 }
+
 
 document.querySelector('#loupe-recherche').addEventListener('click', search);
 

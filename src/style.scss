@@ -338,6 +338,9 @@ audio {
   color: var(--color-error);
 }
 
+#synonymous.texte{
+  text-align: justify;
+}
 @media screen and (max-width: 1426px) {
   #loupe-recherche {
     background-image: url(./assets/images/loupe-mobile.webp);
@@ -476,7 +479,6 @@ audio {
   }
 }
 
-
 body.dark-theme {
   background-image: url(./assets/images/Background-desktop-dark-mode.webp);
   color: var(--color-white);
@@ -512,3 +514,6 @@ input.dark-theme {
   color: var(--color-lightblue);
 }
 
+li.dark-theme {
+  border-bottom: var(--color-white) solid 1px;
+}
