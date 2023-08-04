@@ -110,6 +110,7 @@ function displayWordData(data) {
       meaning.definitions.forEach(definition => {
         wordDefinitions.push(definition.definition);
       });
+      console.log(wordDefinitions);
     });
 
     // Recherche dans la première définition les synonymes présents, sa prononciation et son audio

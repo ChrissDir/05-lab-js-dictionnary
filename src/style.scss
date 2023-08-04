@@ -479,6 +479,53 @@ audio {
   }
 }
 
+@media screen and (max-width: 375px){
+  body {
+    background-image: url(./assets/images/Background-mobile-light-mode.webp);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body.dark-theme {
+    background-image: url(./assets/images/Background-desktop-dark-mode.webp);
+    color: var(--color-white);
+  }
+
+  #component.dark-theme,
+  #options.dark-theme {
+    background: var(--background-color-dark-theme);
+  }
+
+  input.dark-theme {
+    color: var(--color-lightgray);
+  }
+
+  #finder:focus.dark-theme {
+    background-color: var(--color-lightblue);
+    outline-color: var(--color-white);
+    color: var(--color-black);
+  }
+
+  #serif.dark-theme,
+  #sans-serif.dark-theme,
+  #inter.dark-theme,
+  #suggestion.dark-theme {
+    color: var(--color-white);
+  }
+
+  #serif:hover.dark-theme,
+  #sans-serif:hover.dark-theme,
+  #inter:hover.dark-theme,
+  #resultat.dark-theme,
+  #prononciation.dark-theme {
+    color: var(--color-lightblue);
+  }
+
+  li.dark-theme {
+    border-bottom: var(--color-white) solid 1px;
+  }
+}
+
 body.dark-theme {
   background-image: url(./assets/images/Background-desktop-dark-mode.webp);
   color: var(--color-white);
