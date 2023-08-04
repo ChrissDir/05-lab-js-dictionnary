@@ -306,7 +306,7 @@ audio {
 }
 
 #synonymous-title {
-  padding-top: 5px;
+  margin-top: 40px;
 }
 
 #serif,
@@ -341,6 +341,7 @@ audio {
 #synonymous.texte{
   text-align: justify;
 }
+
 @media screen and (max-width: 1426px) {
   #loupe-recherche {
     background-image: url(./assets/images/loupe-mobile.webp);
@@ -437,7 +438,7 @@ audio {
 
   #synonymous-title {
     max-width: 418px;
-    padding-top: 1.8125rem;
+    margin-top: 1.8125rem;
   }
 
   #synonymous {
@@ -451,17 +452,17 @@ audio {
 }
 
 @media screen and (max-width: 900px) {
-  #imageguguss {
-    content: url(./assets/images/guguss-mobile.webp);
-    width: 90px;
-    height: 70px;
-    top: 45%;
+  #divdedroite{
+    display: none;
+  }
+
+  #divdegauche{
+    min-width: 100%;
   }
 
   #component {
     width: 90%;
     min-height: auto;
-    max-width: 425px;
   }
 
   audio,
@@ -476,12 +477,6 @@ audio {
 
   input:focus {
     outline: 2px solid var(--color-lightblue);
-  }
-}
-
-@media screen and (max-width: 375px){
-  body {
-    background-image: url(./assets/images/Background-mobile-light-mode.webp);
   }
 }
 

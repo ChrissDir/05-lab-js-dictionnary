@@ -85,7 +85,6 @@ function search() {
     .then(data => displayWordData(data))
     .catch(error => {
       resultat.textContent = "Aucune définition trouvée !";
-      console.log(error);
     });
 }
 
