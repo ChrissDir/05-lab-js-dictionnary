@@ -255,6 +255,10 @@ li {
   border-bottom: var(--color-lightgray) solid 1px;
 }
 
+li:last-child{
+  border-bottom: none;
+}
+
 .texte {
   font-size: 1rem;
 }
@@ -558,4 +562,7 @@ input.dark-theme {
 
 li.dark-theme {
   border-bottom: var(--color-white) solid 1px;
+}
+li:last-child.dark-theme {
+  border-bottom: none;
 }
