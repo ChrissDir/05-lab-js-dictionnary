@@ -91,7 +91,7 @@ button {
   align-items: center;
   justify-content: space-between;
   margin-left: auto;
-  margin-right: 57px;
+  margin-right: 3.5625rem;
   max-height: 54px;
   gap: 70px;
   font-size: 2rem;
@@ -368,13 +368,13 @@ audio {
     margin-top: 3.375rem;
     font-size: 2rem;
     letter-spacing: .9rem;
-    padding-left: 0px;
+    padding-left: 0rem;
   }
 
   h2 {
     font-family: "Inter";
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   #prononciation {
@@ -389,7 +389,7 @@ audio {
   #serif,
   #sans-serif,
   #inter {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   audio {
@@ -398,7 +398,7 @@ audio {
 
   #options {
     width: 100%;
-    padding: 11px 5%;
+    padding: .6875rem 5%;
     margin: 0;
     gap: 0;
     border-radius: 0rem;
@@ -406,7 +406,7 @@ audio {
   }
 
   input {
-    padding: 10px 14px;
+    padding: .625rem .875rem;
     font-size: .75rem;
   }
 
